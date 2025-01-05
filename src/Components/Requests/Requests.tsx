@@ -1,4 +1,4 @@
-import { Card, styled } from "@mui/material";
+import { Card, Container, styled } from "@mui/material";
 import { Box, Grid2, ListItem, Typography } from "@mui/material";
 import { useEffect, useState } from "react";
 
@@ -18,7 +18,6 @@ const StyledContainer = styled("section")(({theme}) => ({
         display: 'flex',
         justifyContent: 'space-evelin',
         alignItems: 'center',
-        margin: "0 auto",
         paddingTop: "20px"
     },
     '& .itemLink': {
@@ -72,11 +71,11 @@ const Request: React.FC = () => {
                 ) : falhaErro ? (
                     <Typography variant="h3" color="secondary">Erro ao carregar os repositórios</Typography>
                 ) : (
-                    <>
+                    <Container>
                         <Typography id="projects" variant="h3" color="secondary">Projects</Typography>
                         <Grid2 container spacing={2}>
                             {repos.map(({ id, name, language, html_url }) => (
-                                <Grid2 key={id}  xs={12} sm={6} md={4} className="gridList">                              
+                                <Grid2 key={id}  size={{xs:12, sm:6, md:4}} className="gridList">                              
                                     <ListItem key={id} className="listItem" >
                                         <Card sx={{ p:2, height:{xs: 'auto'}, width: {xs: 'auto', sm: 200, md: 300}, display: 'flex', flexDirection:'column', '& > *': {flexGrow: 1} }}>
                                             <div>
@@ -91,7 +90,7 @@ const Request: React.FC = () => {
                                 </Grid2>
                             ))}
                         </Grid2>
-                    </>
+                    </Container>
                 )}
             </StyledContainer>
         </Box>
