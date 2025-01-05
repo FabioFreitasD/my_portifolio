@@ -31,7 +31,7 @@ const Skills: React.FC = () => {
     return (
         <StyledSkills>
             <Container maxWidth= 'lg'>
-                <Typography variant="h3" gutterBottom color={'secondary'}>
+                <Typography id="skills" variant="h3" gutterBottom color={'secondary'}>
                     Skills
                 </Typography>
                 <Grid2 container spacing={3}>

@@ -73,7 +73,7 @@ const Request: React.FC = () => {
                     <Typography variant="h3" color="secondary">Erro ao carregar os repositórios</Typography>
                 ) : (
                     <>
-                        <Typography variant="h3" color="secondary">Projects</Typography>
+                        <Typography id="projects" variant="h3" color="secondary">Projects</Typography>
                         <Grid2 container spacing={2}>
                             {repos.map(({ id, name, language, html_url }) => (
                                 <Grid2 key={id}  xs={12} sm={6} md={4} className="gridList">                              

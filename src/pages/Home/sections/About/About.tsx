@@ -29,7 +29,7 @@ const About = () => {
         <StyledAbout>
             <Container maxWidth='lg'>
                 <Grid2 size = {{md: 12}}>
-                    <Typography variant="h3" fontSize={'24px'} color={'secondary'} gutterBottom>
+                    <Typography id="about" variant="h3" fontSize={'24px'} color={'secondary'} gutterBottom>
                         About-me
                     </Typography>
                     <SlideAbout />
