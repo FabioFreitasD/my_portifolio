@@ -5,18 +5,22 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import StyledButton from "../../../../Components/StyledButton/StyledButton";
 import { AnimatedBackground } from "../../../../Components/AnimatedBackground/AnimatedBackground";
 
+
 const Hero = () => {
 
     const StyledHero = styled("div")(({theme}) => ({
         backgroundColor: theme.palette.primary.main,
-        height: "100vh",
         display: "flex",
         alignItems: "center",
         [theme.breakpoints.up('xs')] : {    // <= mobile
-            paddingTop: "100px"
+            paddingTop: "100px",
+            height: "100vh",
+            paddingBottom: "80px",
         },
         [theme.breakpoints.up('md')] : {    // >= mobile
-            paddingTop: "0"
+            paddingTop: "0",
+            height: "100vh",
+            paddinBottom: "0"
         }
     }))
 
@@ -25,6 +29,17 @@ const Hero = () => {
         borderRadius: "50%",
         border:`1px solid ${theme.palette.primary.contrastText}`
     }))
+
+    const handleDownload = () => {
+        const link = document.createElement('a');
+        link.href = '/my_curriculo.pdf';
+        link.download = 'my_curriculo.pdf';
+        link.click();
+    }   
+    
+    const handleContactMe = () => {
+        window.location.href = 'mailto:fabiofreitasdiniz365@gmail.com?subject=Contato&body=Olá, Fabio!';
+    }
 
     return (
         <>
@@ -46,7 +61,7 @@ const Hero = () => {
                             <Typography color="secondary" variant="h2" textAlign="center">I'm a Developer Front-End</Typography>
                             <Grid2 container display="flex" justifyContent="center" spacing={3} pt={3}>
                                 <Grid2 size = {{ xs:12, md:4 }} display="flex" justifyContent="center">
-                                    <StyledButton>
+                                    <StyledButton onClick={handleDownload}>
                                         <DownloadIcon />
                                         <Typography>
                                             Download CV
@@ -54,7 +69,7 @@ const Hero = () => {
                                     </StyledButton>
                                 </Grid2>
                                 <Grid2 size = {{ xs:12, md:4 }} display="flex" justifyContent="center">
-                                    <StyledButton> 
+                                    <StyledButton onClick={handleContactMe}> 
                                         <MailOutlineIcon />
                                         <Typography>
                                             Contact me
