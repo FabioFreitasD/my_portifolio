@@ -8,6 +8,23 @@ const StyledContainer = styled('section')(({theme}) => ({
         display: "block",
         textAlign: "center",
         color: theme.palette.primary.contrastText
+    },
+    [theme.breakpoints.up('xs')]: {
+        '& .container': {
+            display: "block",
+            padding: "10px",
+            textAlign: "center",
+        },
+        '& .descretion': {
+            paddingTop: "20px"
+        }
+    },
+    [theme.breakpoints.up('md')]: {
+        '& .container': {
+            display: "flex",
+            justifyContent: "space-between",
+            alignItems: "center"
+        }
     }
 }))
 
@@ -15,7 +32,7 @@ const Footer = () => {
     return(
         <StyledContainer>
             <Box>
-                <Container sx={{ display:"flex", justifyContent: "space-between", alignItems: "center", px: 0, py: 0}}>
+                <Container className="container" sx={{ px: 0, py: 0}} >
                     <Box className="container-footer">
                         <Typography fontSize="1.4em" >Redes</Typography>
                         <IconButton>
@@ -32,7 +49,7 @@ const Footer = () => {
                         </IconButton>
                         <Typography>Contact Us</Typography>
                     </Box>
-                    <Typography variant="h6" color="secondary">
+                    <Typography className="descretion" variant="h6" color="secondary">
                         Rua Estrada da Pedreira nº 316C, Bairro Barrocada - Itamonte - MG<br/>
                         © 2025 Fabio Freitas Diniz. Todos os direitos reservados.
                     </Typography>
