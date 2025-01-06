@@ -13,9 +13,9 @@ const skills: Skill[] = [
     { name: 'React', level: 'Beginner' },
     { name: 'TypeScript', level: 'Beginner' },
     { name: 'Vue', level: 'Beginner' },
-    { name: 'Sass', level: 'Intermediate' },
-    { name: 'Less', level: 'intermediate' },
-    { name: 'Grunt', level: 'beginner'},
+    { name: 'SASS', level: 'Intermediate' },
+    { name: 'LESS', level: 'intermediate' },
+    { name: 'GRUNT', level: 'beginner'},
     { name: 'HTML', level: 'Intermediate' },
     { name: 'CSS', level: 'Intermediate'}
 ];
